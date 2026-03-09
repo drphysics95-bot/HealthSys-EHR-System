@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Profile - HealthPortal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0 border-r border-primary/10 bg-white dark:bg-background-dark/50 overflow-y-auto">
+<div class="flex flex-col h-full p-4">
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="bg-primary rounded-lg p-2 text-white">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<div>
+<h1 class="text-slate-900 dark:text-white text-lg font-bold leading-none">HealthPortal</h1>
+<p class="text-primary/70 text-xs font-medium uppercase tracking-wider">Clinical Dashboard</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white shadow-md shadow-primary/20" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-medium">Patients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-sm font-medium">Appointments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<div class="mt-8 mb-2 px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">System</div>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Support</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 px-3 border-t border-primary/10">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">medical_information</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate">Dr. Sarah Smith</p>
+<p class="text-xs text-slate-500 truncate">Cardiologist</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+<div class="max-w-[1200px] mx-auto p-6 lg:p-10 space-y-8">
+<!-- Patient Profile Header -->
+<header class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 p-6 shadow-sm">
+<div class="flex flex-col @[640px]:flex-row justify-between items-start @[640px]:items-center gap-6">
+<div class="flex gap-6 items-center">
+<div class="h-24 w-24 rounded-full border-4 border-primary/10 overflow-hidden bg-slate-100">
+<img alt="Patient profile portrait" class="h-full w-full object-cover" data-alt="Close up portrait of a middle-aged male patient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOZHaaFgu3e5Qu1LFCv6jFH79nBx7CZQVzy0vKI_z2gowUuta9hfMECMENduMoB_QLhB2eauPncg244jMarMyPvscXnHFCmFV93CQVG5d6iRaepXEGWQoWcXcfXPN8s_4P6ne6AiUWjTqUrlGK6VKWlHv0qIQz7MvUwTUNQEXJVMGw8ohzNDp-dZ_vKmv8YWhkxEWlr8NO0Nz7qRp_GEvSs3HfuMU_VUqIZ5LvtwQCC6HNNCm5dlZJmLVd4Fu_-LL7n5vTCeTWYW4"/>
+</div>
+<div>
+<h2 class="text-2xl font-extrabold text-slate-900 dark:text-white leading-tight">Johnathan Doe</h2>
+<div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-slate-600 dark:text-slate-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">fingerprint</span> ID: #PT-8829</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">calendar_month</span> 45 years old</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">male</span> Male</span>
+</div>
+<div class="flex flex-wrap gap-x-4 gap-y-1 mt-1 text-sm text-slate-600 dark:text-slate-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">bloodtype</span> Type: A+</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">weight</span> 185 lbs</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">straighten</span> 5'11"</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3 w-full @[480px]:w-auto">
+<button class="flex-1 @[480px]:flex-none px-4 py-2 text-sm font-bold bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+                                Edit Profile
+                            </button>
+<button class="flex-1 @[480px]:flex-none px-4 py-2 text-sm font-bold bg-primary text-white rounded-lg shadow-lg shadow-primary/30 hover:shadow-xl hover:translate-y-[-1px] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+                                Export EHR
+                            </button>
+</div>
+</div>
+</header>
+<!-- Vitals Summary and Trends -->
+<section>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-primary/10">
+<p class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Last Blood Pressure</p>
+<div class="flex items-baseline justify-between">
+<h3 class="text-2xl font-bold">120/80 <span class="text-xs text-slate-400 font-normal">mmHg</span></h3>
+<span class="text-xs font-bold text-red-500 bg-red-100 dark:bg-red-500/10 px-2 py-1 rounded">-2%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-primary/10">
+<p class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Resting Heart Rate</p>
+<div class="flex items-baseline justify-between">
+<h3 class="text-2xl font-bold">72 <span class="text-xs text-slate-400 font-normal">bpm</span></h3>
+<span class="text-xs font-bold text-green-500 bg-green-100 dark:bg-green-500/10 px-2 py-1 rounded">+1%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-primary/10">
+<p class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">SpO2 Level</p>
+<div class="flex items-baseline justify-between">
+<h3 class="text-2xl font-bold">98 <span class="text-xs text-slate-400 font-normal">%</span></h3>
+<span class="text-xs font-bold text-red-500 bg-red-100 dark:bg-red-500/10 px-2 py-1 rounded">-1%</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Blood Pressure Chart -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-bold">Blood Pressure (mmHg)</h4>
+<select class="text-xs border-primary/20 rounded bg-transparent dark:bg-slate-800">
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+</select>
+</div>
+<div class="relative h-48 w-full">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 150">
+<path d="M0,120 Q50,110 100,115 T200,80 T300,90 T400,60" fill="none" stroke="#136dec" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0,100 Q50,90 100,95 T200,60 T300,70 T400,40" fill="none" stroke="#136dec/30" stroke-dasharray="4" stroke-linecap="round" stroke-width="2"></path>
+<path d="M0,120 Q50,110 100,115 T200,80 T300,90 T400,60 L400,150 L0,150 Z" fill="url(#bpGradient)" opacity="0.1"></path>
+<defs>
+<lineargradient id="bpGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#136dec"></stop>
+<stop offset="100%" stop-color="#136dec" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-slate-400 uppercase">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+<!-- Heart Rate Chart -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-bold">Heart Rate (bpm)</h4>
+<select class="text-xs border-primary/20 rounded bg-transparent dark:bg-slate-800">
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+</select>
+</div>
+<div class="relative h-48 w-full">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 150">
+<path d="M0,100 Q40,110 80,70 T160,85 T240,60 T320,75 T400,50" fill="none" stroke="#136dec" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0,100 Q40,110 80,70 T160,85 T240,60 T320,75 T400,50 L400,150 L0,150 Z" fill="url(#hrGradient)" opacity="0.1"></path>
+<defs>
+<lineargradient id="hrGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#136dec"></stop>
+<stop offset="100%" stop-color="#136dec" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-slate-400 uppercase">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Left Column: Medical History & Medications -->
+<div class="xl:col-span-2 space-y-8">
+<!-- Medical History Section -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 overflow-hidden">
+<div class="p-6 border-b border-primary/10 flex justify-between items-center">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history_edu</span>
+                                    Medical History
+                                </h3>
+<button class="text-primary text-sm font-bold hover:underline">View All</button>
+</div>
+<div class="divide-y divide-primary/10">
+<div class="p-4 flex justify-between items-center hover:bg-primary/5 transition-colors">
+<div>
+<h4 class="font-bold text-slate-800 dark:text-slate-200">Hypertension</h4>
+<p class="text-sm text-slate-500">Chronic Management since Feb 2021</p>
+</div>
+<span class="px-3 py-1 bg-green-100 dark:bg-green-500/10 text-green-600 text-xs font-bold rounded-full">Active</span>
+</div>
+<div class="p-4 flex justify-between items-center hover:bg-primary/5 transition-colors">
+<div>
+<h4 class="font-bold text-slate-800 dark:text-slate-200">Type 2 Diabetes</h4>
+<p class="text-sm text-slate-500">Diagnosed Dec 2019</p>
+</div>
+<span class="px-3 py-1 bg-green-100 dark:bg-green-500/10 text-green-600 text-xs font-bold rounded-full">Active</span>
+</div>
+<div class="p-4 flex justify-between items-center hover:bg-primary/5 transition-colors">
+<div>
+<h4 class="font-bold text-slate-800 dark:text-slate-200">Appendectomy</h4>
+<p class="text-sm text-slate-500">Surgery June 2015</p>
+</div>
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-500 text-xs font-bold rounded-full">Resolved</span>
+</div>
+</div>
+</div>
+<!-- Current Medications -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 overflow-hidden">
+<div class="p-6 border-b border-primary/10 flex justify-between items-center">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">medication</span>
+                                    Current Medications
+                                </h3>
+<button class="text-primary text-sm font-bold hover:underline">+ Add New</button>
+</div>
+<div class="p-0 overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+<th class="px-6 py-3">Medication</th>
+<th class="px-6 py-3">Dosage</th>
+<th class="px-6 py-3">Frequency</th>
+<th class="px-6 py-3">Prescriber</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/10 text-sm">
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-bold text-slate-800 dark:text-slate-200">Lisinopril</td>
+<td class="px-6 py-4">10 mg</td>
+<td class="px-6 py-4">Once daily</td>
+<td class="px-6 py-4">Dr. Sarah Smith</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-bold text-slate-800 dark:text-slate-200">Metformin</td>
+<td class="px-6 py-4">500 mg</td>
+<td class="px-6 py-4">Twice daily</td>
+<td class="px-6 py-4">Dr. James Wilson</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-bold text-slate-800 dark:text-slate-200">Atorvastatin</td>
+<td class="px-6 py-4">20 mg</td>
+<td class="px-6 py-4">At bedtime</td>
+<td class="px-6 py-4">Dr. Sarah Smith</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column: Lab Results Summary -->
+<div class="xl:col-span-1 space-y-8">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 overflow-hidden h-full">
+<div class="p-6 border-b border-primary/10 flex justify-between items-center">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">biotech</span>
+                                    Recent Lab Results
+                                </h3>
+</div>
+<div class="p-6 space-y-6">
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold text-slate-700 dark:text-slate-300">HbA1c</span>
+<span class="text-xs font-bold text-red-500">6.8% (High)</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+<div class="bg-red-500 h-full rounded-full" style="width: 75%"></div>
+</div>
+<p class="text-[10px] text-slate-500 mt-1 uppercase font-bold">Target: &lt; 6.5% • Last: Oct 12, 2023</p>
+</div>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold text-slate-700 dark:text-slate-300">LDL Cholesterol</span>
+<span class="text-xs font-bold text-green-500">92 mg/dL (Normal)</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+<div class="bg-green-500 h-full rounded-full" style="width: 45%"></div>
+</div>
+<p class="text-[10px] text-slate-500 mt-1 uppercase font-bold">Target: &lt; 100 mg/dL • Last: Sep 20, 2023</p>
+</div>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold text-slate-700 dark:text-slate-300">Serum Creatinine</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">0.9 mg/dL</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 30%"></div>
+</div>
+<p class="text-[10px] text-slate-500 mt-1 uppercase font-bold">Range: 0.7-1.3 mg/dL • Last: Oct 12, 2023</p>
+</div>
+<div class="pt-4 mt-4 border-t border-primary/10">
+<div class="flex items-center gap-4 p-3 bg-primary/5 rounded-lg border border-primary/10">
+<span class="material-symbols-outlined text-primary">description</span>
+<div class="flex-1">
+<p class="text-xs font-bold">Complete Metabolic Panel</p>
+<p class="text-[10px] text-slate-500">Uploaded Oct 12, 2023</p>
+</div>
+<button class="text-primary hover:text-primary/70">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<button class="w-full py-3 text-sm font-bold text-slate-600 dark:text-slate-400 border border-primary/20 rounded-lg hover:bg-primary/5 transition-colors">
+                                    Browse All Lab History
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

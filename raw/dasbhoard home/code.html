@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>HealthSys Dashboard</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col fixed h-full">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<div>
+<h1 class="text-base font-bold leading-none">HealthSys Admin</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">General Hospital</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm">Patients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-sm">Appointments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2">
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700" data-alt="Profile picture of Dr. Smith" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAEn3ZJHfnerYBniIPPbpjEt5tic9ROrjkqYZEA7nVcn0FLfnDvvrRa9tfR5HtuzyEP3xV9D-i7lU-viTxwPMkvhYq76fN6wyOU6sqKjRvUGE8nxd2B-e4QcSS1MIS4j6L9bVB-XC52Og2sS7Z-788jDFNiR_c16tiIucgvrC7UkURAn60WyfjwAwpo1AJqXZ0xl7lS6P2_Owz1AKKdLRNFuuko6ITRebT-dmDvLIyoWmxqq2des3LmU65Lxfw2A90aMX89u5E74I'); background-size: cover;"></div>
+<div class="overflow-hidden">
+<p class="text-sm font-semibold truncate">Dr. Alexander Smith</p>
+<p class="text-xs text-slate-500 truncate">Cardiologist</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-64">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg focus:ring-2 focus:ring-primary/50 text-sm" placeholder="Search patients, reports, or records..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="size-10 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<!-- Dashboard Body -->
+<div class="p-8">
+<div class="mb-8">
+<h1 class="text-3xl font-bold tracking-tight">Welcome back, Dr. Smith</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Here is a summary of your clinical practice for today.</p>
+</div>
+<!-- Metric Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400">Total Patients</span>
+<div class="size-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold">1,284</span>
+<span class="text-emerald-600 text-sm font-semibold mb-1 flex items-center">
+<span class="material-symbols-outlined text-xs">arrow_upward</span> 12%
+                        </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400">Pending Appointments</span>
+<div class="size-10 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-500">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold">24</span>
+<span class="text-rose-600 text-sm font-semibold mb-1 flex items-center">
+<span class="material-symbols-outlined text-xs">arrow_downward</span> 5%
+                        </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400">Recent Activity</span>
+<div class="size-10 bg-indigo-500/10 rounded-lg flex items-center justify-center text-indigo-500">
+<span class="material-symbols-outlined">monitoring</span>
+</div>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold">89%</span>
+<span class="text-emerald-600 text-sm font-semibold mb-1 flex items-center">
+<span class="material-symbols-outlined text-xs">arrow_upward</span> 2%
+                        </span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Recent Visits Section -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<h2 class="font-bold text-lg">Recent Visits</h2>
+<button class="text-primary text-sm font-semibold hover:underline">View all</button>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<div class="px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined">face</span>
+</div>
+<div>
+<p class="text-sm font-bold">Johnathan Doe</p>
+<p class="text-xs text-slate-500">Routine Checkup • 10:30 AM</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-wider rounded">Completed</span>
+</div>
+<div class="px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined">face_3</span>
+</div>
+<div>
+<p class="text-sm font-bold">Sarah Jenkins</p>
+<p class="text-xs text-slate-500">Hypertension Follow-up • 11:15 AM</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider rounded">In Progress</span>
+</div>
+<div class="px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="text-sm font-bold">Robert Wilson</p>
+<p class="text-xs text-slate-500">Chest Pain Consult • 01:45 PM</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold uppercase tracking-wider rounded">Scheduled</span>
+</div>
+<div class="px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined">face_2</span>
+</div>
+<div>
+<p class="text-sm font-bold">Elena Rodriguez</p>
+<p class="text-xs text-slate-500">Annual Physical • 02:30 PM</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold uppercase tracking-wider rounded">Scheduled</span>
+</div>
+</div>
+</section>
+<!-- Recent Lab Results -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<h2 class="font-bold text-lg">Recent Lab Results</h2>
+<button class="text-primary text-sm font-semibold hover:underline">View all</button>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<div class="px-6 py-4">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-bold">Complete Blood Count (CBC)</p>
+<span class="text-xs text-slate-500">2 hours ago</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Patient: Michael Chen</span>
+<span class="text-xs text-rose-600 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">warning</span> Abnormal
+                                </span>
+</div>
+</div>
+<div class="px-6 py-4">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-bold">Lipid Panel</p>
+<span class="text-xs text-slate-500">5 hours ago</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Patient: Samantha Reed</span>
+<span class="text-xs text-emerald-600 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">check_circle</span> Normal
+                                </span>
+</div>
+</div>
+<div class="px-6 py-4">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-bold">HbA1c Diabetes Screening</p>
+<span class="text-xs text-slate-500">Yesterday</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Patient: David Miller</span>
+<span class="text-xs text-emerald-600 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">check_circle</span> Normal
+                                </span>
+</div>
+</div>
+<div class="px-6 py-4">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-bold">Thyroid Stimulating Hormone</p>
+<span class="text-xs text-slate-500">Yesterday</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Patient: Linda Thompson</span>
+<span class="text-xs text-amber-600 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">info</span> Review Needed
+                                </span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

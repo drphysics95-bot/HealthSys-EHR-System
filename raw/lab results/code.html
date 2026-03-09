@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Lab Results - HealthPortal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">health_metrics</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none">HealthPortal</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Clinical Access</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-medium">Patients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">experiment</span>
+<span class="text-sm font-medium">Lab Queue</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-sm font-medium">Appointments</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<div class="mt-4 flex items-center gap-3 px-3 py-2">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700" data-alt="Medical staff profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDR4xSY-btmZ2qGBg09P0rqPLTaItOXBvsCdhr5uezOQbbzOTLJqkjdJcjOnwjAvHLQHGHZPQEV_Jo5eQnCIqe_3pmS7cLW-em3FccNSvtRUl_9WMDTh-35NsX3oa-0UZj1r29tNVn0aygq_Lav8W0b2jFuZIkTYSY8iUZmMOsgasr40uCkwQCGKpMaPtC5hPbgxdGZMoSJXhZvlX--tZ7w9emEx82D8mn8FzsUDleUXIPdi2ZARTc4xxC3H_OiWr3bVLQ2EvY5eVQ')"></div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold truncate">Dr. Sarah Chen</p>
+<p class="text-[10px] text-slate-500">Cardiologist</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-8 py-4">
+<div class="flex items-center justify-between max-w-7xl mx-auto">
+<div>
+<nav class="flex items-center gap-2 text-xs text-slate-500 mb-1">
+<a class="hover:text-primary" href="#">Patients</a>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="font-semibold text-slate-900 dark:text-slate-100">Lab Results</span>
+</nav>
+<div class="flex items-center gap-4">
+<h2 class="text-2xl font-black tracking-tight">Johnathan Doe</h2>
+<span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Active Patient</span>
+</div>
+<p class="text-sm text-slate-500 mt-1">
+                        Patient ID: <span class="font-mono text-slate-700 dark:text-slate-300">#8829-XJ</span>
+<span class="mx-2 opacity-30">|</span> 
+                        DOB: <span class="text-slate-700 dark:text-slate-300">05/12/1984 (39y)</span>
+</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg">download</span>
+                        Export PDF
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">add</span>
+                        New Lab Order
+                    </button>
+</div>
+</div>
+</header>
+<!-- Main Body -->
+<div class="flex-1 overflow-y-auto p-8 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto space-y-6">
+<!-- Tabs -->
+<div class="flex border-b border-slate-200 dark:border-slate-800">
+<button class="px-6 py-3 border-b-2 border-primary text-primary text-sm font-bold">Recent Results</button>
+<button class="px-6 py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 text-sm font-bold transition-colors">Historical Trends</button>
+<button class="px-6 py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 text-sm font-bold transition-colors">Pending Tests (2)</button>
+<button class="px-6 py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 text-sm font-bold transition-colors">Imaging</button>
+</div>
+<!-- Filters & Search -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Search lab tests..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-slate-500 hover:bg-slate-50">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<select class="text-sm rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-2 pl-3 pr-10 focus:ring-primary">
+<option>Last 3 Months</option>
+<option>Last 6 Months</option>
+<option>Last Year</option>
+</select>
+</div>
+</div>
+<!-- Lab Results Table -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Test Component</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Value</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Unit</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Reference Range</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Collected Date</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<p class="font-bold text-slate-900 dark:text-slate-100">Glucose, Fasting</p>
+<p class="text-[10px] text-slate-400">Plasma / Serum</p>
+</td>
+<td class="px-6 py-4 font-mono font-bold text-red-600 dark:text-red-400">115</td>
+<td class="px-6 py-4 text-sm text-slate-500">mg/dL</td>
+<td class="px-6 py-4 text-sm text-slate-500">70 - 99</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300">
+<span class="size-1.5 rounded-full bg-red-600 dark:bg-red-400"></span>
+                                        High
+                                    </span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 24, 2023 <span class="text-[10px] opacity-60">08:14 AM</span></td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<p class="font-bold text-slate-900 dark:text-slate-100">Hemoglobin A1c</p>
+<p class="text-[10px] text-slate-400">Whole Blood</p>
+</td>
+<td class="px-6 py-4 font-mono font-bold text-red-600 dark:text-red-400">5.8</td>
+<td class="px-6 py-4 text-sm text-slate-500">%</td>
+<td class="px-6 py-4 text-sm text-slate-500">&lt; 5.7</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300">
+<span class="size-1.5 rounded-full bg-red-600 dark:bg-red-400"></span>
+                                        High
+                                    </span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 24, 2023 <span class="text-[10px] opacity-60">08:14 AM</span></td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<p class="font-bold text-slate-900 dark:text-slate-100">Creatinine</p>
+<p class="text-[10px] text-slate-400">Serum</p>
+</td>
+<td class="px-6 py-4 font-mono font-bold text-slate-900 dark:text-slate-100">0.92</td>
+<td class="px-6 py-4 text-sm text-slate-500">mg/dL</td>
+<td class="px-6 py-4 text-sm text-slate-500">0.70 - 1.30</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300">
+<span class="size-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400"></span>
+                                        Normal
+                                    </span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 24, 2023 <span class="text-[10px] opacity-60">08:14 AM</span></td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<p class="font-bold text-slate-900 dark:text-slate-100">Potassium</p>
+<p class="text-[10px] text-slate-400">Serum</p>
+</td>
+<td class="px-6 py-4 font-mono font-bold text-amber-600 dark:text-amber-400">3.4</td>
+<td class="px-6 py-4 text-sm text-slate-500">mmol/L</td>
+<td class="px-6 py-4 text-sm text-slate-500">3.5 - 5.1</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300">
+<span class="size-1.5 rounded-full bg-amber-600 dark:bg-amber-400"></span>
+                                        Low
+                                    </span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 24, 2023 <span class="text-[10px] opacity-60">08:14 AM</span></td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<p class="font-bold text-slate-900 dark:text-slate-100">Hemoglobin</p>
+<p class="text-[10px] text-slate-400">Whole Blood</p>
+</td>
+<td class="px-6 py-4 font-mono font-bold text-slate-900 dark:text-slate-100">14.1</td>
+<td class="px-6 py-4 text-sm text-slate-500">g/dL</td>
+<td class="px-6 py-4 text-sm text-slate-500">13.2 - 17.1</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300">
+<span class="size-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400"></span>
+                                        Normal
+                                    </span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 20, 2023 <span class="text-[10px] opacity-60">10:45 AM</span></td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<p class="font-bold text-slate-900 dark:text-slate-100">White Blood Cell Count</p>
+<p class="text-[10px] text-slate-400">Whole Blood</p>
+</td>
+<td class="px-6 py-4 font-mono font-bold text-slate-900 dark:text-slate-100">6.2</td>
+<td class="px-6 py-4 text-sm text-slate-500">x10E3/uL</td>
+<td class="px-6 py-4 text-sm text-slate-500">3.4 - 10.8</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300">
+<span class="size-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400"></span>
+                                        Normal
+                                    </span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 20, 2023 <span class="text-[10px] opacity-60">10:45 AM</span></td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination-style Footer -->
+<div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 flex items-center justify-between border-t border-slate-200 dark:border-slate-800">
+<p class="text-xs text-slate-500 font-medium">Showing 6 of 42 results</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs border border-slate-200 dark:border-slate-700 rounded bg-white dark:bg-slate-900 hover:bg-slate-50 disabled:opacity-50" disabled="">Previous</button>
+<button class="px-3 py-1 text-xs border border-slate-200 dark:border-slate-700 rounded bg-white dark:bg-slate-900 hover:bg-slate-50">Next</button>
+</div>
+</div>
+</div>
+<!-- Doctor's Notes Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">notes</span>
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-500">Clinical Interpretation</h3>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed italic">
+                            "Patient shows elevated fasting glucose and A1c levels consistent with pre-diabetic range. Potassium is slightly below the reference range; recommendation to increase dietary intake or supplement. Renal function remains stable. Review cardiovascular risk factors during next consultation."
+                        </p>
+<div class="mt-4 flex items-center gap-3">
+<div class="size-8 rounded bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">signature</span>
+</div>
+<div class="text-[11px]">
+<p class="font-bold text-slate-900 dark:text-slate-100">Electronically Signed</p>
+<p class="text-slate-500">Dr. Sarah Chen, Oct 25, 2023 09:12 AM</p>
+</div>
+</div>
+</div>
+<div class="bg-primary p-6 rounded-xl text-white shadow-lg shadow-primary/20 flex flex-col justify-between">
+<div>
+<h3 class="text-xs font-bold uppercase tracking-widest opacity-80 mb-2">Next Steps</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-2 text-sm">
+<span class="material-symbols-outlined text-sm mt-0.5">check_circle</span>
+                                    Follow-up appointment in 2 weeks
+                                </li>
+<li class="flex items-start gap-2 text-sm">
+<span class="material-symbols-outlined text-sm mt-0.5">check_circle</span>
+                                    Start daily Glucose monitoring
+                                </li>
+<li class="flex items-start gap-2 text-sm opacity-60">
+<span class="material-symbols-outlined text-sm mt-0.5">radio_button_unchecked</span>
+                                    Lipid panel at 6-month mark
+                                </li>
+</ul>
+</div>
+<button class="w-full mt-6 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-xs font-bold transition-colors">
+                            Manage Care Plan
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
