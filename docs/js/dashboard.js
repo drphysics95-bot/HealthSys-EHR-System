@@ -16,20 +16,3 @@ async function loadPatientCount() {
 }
 
 loadPatientCount();
-
-async function loadPendingAppointmentsCount() {
-    try {
-        const response = await fetch('/api/pendingappointments/count');
-        const data = await response.json();
-        console.log('Pending appointments data:', data);
-        console.log('Element found:', !!document.getElementById('pendingAppointmentsCount'));
-        console.log('Element HTML:', document.getElementById('pendingAppointmentsCount').outerHTML);
-        document.getElementById('pendingAppointmentsCount').textContent =
-            data.totalPendingAppointments;
-        console.log('Set to:', document.getElementById('pendingAppointmentsCount').textContent);
-    } catch (error) {
-        console.error("Error loading pending appointments count:", error);
-    }
-}
-
-loadPendingAppointmentsCount();
